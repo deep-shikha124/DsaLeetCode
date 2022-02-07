@@ -14,7 +14,7 @@ public:
     int sum=0;
     int inorder(TreeNode*root,int low,int high){
        
-        if(root){
+        if(root!=NULL){
             inorder(root->left,low,high);
             if(root->val>=low && root->val<=high){
                 sum+=root->val;
@@ -24,7 +24,7 @@ public:
         return sum;
     }
     int rangeSumBST(TreeNode* root, int low, int high) {
-            if(!root) return 0;
+            if(root==NULL) return 0;
             return inorder(root,low,high);
         
     }
