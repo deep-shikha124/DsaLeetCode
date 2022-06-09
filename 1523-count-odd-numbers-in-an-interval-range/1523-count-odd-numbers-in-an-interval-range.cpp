@@ -17,5 +17,6 @@ public:
         else{
             return (high-low)/2;
         }
+        
     }
 };
