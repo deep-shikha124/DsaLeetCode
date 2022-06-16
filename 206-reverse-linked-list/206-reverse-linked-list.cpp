@@ -23,14 +23,23 @@ public:
         // head=q;
         // return q;
         
-        ListNode *dummy=NULL;
-        while(head!=NULL){
-            ListNode* next=head->next;
-            head->next=dummy;
-            dummy=head;
-            head=next;
+//         ListNode *dummy=NULL;
+//         while(head!=NULL){
+//             ListNode* next=head->next;
+//             head->next=dummy;
+//             dummy=head;
+//             head=next;
             
+//         }
+//         return dummy;
+        ListNode*curr=head;
+        ListNode*prev=NULL;
+        while(curr!=NULL){
+            ListNode*temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
         }
-        return dummy;
+        return prev;
       }
 };
