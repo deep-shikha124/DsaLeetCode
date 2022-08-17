@@ -32,14 +32,27 @@ public:
             
 //         }
 //         return dummy;
-        ListNode*curr=head;
-        ListNode*prev=NULL;
-        while(curr!=NULL){
-            ListNode*temp=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=temp;
+        // ListNode*curr=head;
+        // ListNode*prev=NULL;
+        // while(curr!=NULL){
+        //     ListNode*temp=curr->next;
+        //     curr->next=prev;
+        //     prev=curr;
+        //     curr=temp;
+        // }
+        // return prev;
+        
+        ListNode *prev_p=NULL;
+        ListNode *curr_p=head;
+        ListNode *next_p;
+        while(curr_p){
+            next_p=curr_p->next;
+            curr_p->next=prev_p;
+            
+            prev_p=curr_p;
+            curr_p=next_p;
         }
-        return prev;
+        head=prev_p;
+        return prev_p;
       }
 };
