@@ -30,7 +30,7 @@ public:
         // return maxi;
         
         //O(n)---->
-        int n=nums.size();
+       int n=nums.size();
         int sum=INT_MIN;
         int temp=0;        
         
@@ -40,8 +40,6 @@ public:
             sum=max(sum,temp);
         }
         return sum;
-        
-       
         
     }
 };
